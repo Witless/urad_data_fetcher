@@ -20,9 +20,6 @@ const fetcher = () => fetch(`https://data.uradmonitor.com/api/v1/devices/${senso
 }).then((res) => {
     res.json().then((data) => {
 
-        console.log(data);
-        console.log(data[0].time)
-
         let writeClient = client.getWriteApi(influxOrg, influxBucket, 'ns')
 
             let point = new Point('general_measurement')
